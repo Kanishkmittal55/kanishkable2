@@ -103,7 +103,28 @@ ul {
 
 .about {
     position: relative;
-    padding: var(--section-padding) 0;
+    top: 57rem;
+    
+}
+
+.skills{
+    position: relative;
+    top: 67rem;
+    padding-bottom : 10rem;
+}
+
+.triangle{
+    width: 95px;
+    opacity: 0.18;
+}
+
+.dots{
+    width: 112px;
+}
+
+.square{
+    width: 70px;
+
 }
 
 /* ---------------------------Navbar Styling -------------------------------*/
@@ -213,6 +234,8 @@ header.scrolled .logo {
 }
 
 
+
+
 /* ---------------------------Showcase Area Styling -------------------------------*/
 
 .showcase-area{
@@ -318,14 +341,7 @@ header.scrolled .logo {
     border-radius: 70px;
 }
 
-.dots{
-    width: 112px;
-}
 
-.square{
-    width: 70px;
-
-}
 
 .showcase-area .circle{
     position: absolute;
@@ -357,9 +373,222 @@ header.scrolled .logo {
 .about .container{
     display: grid;
     grid-template-columns: 1.05fr 1fr;
-
+    align-items: center;
 }
 
 .about .text{
     margin: 3rem 0 4rem;
+}
+
+.about-grid{
+    display: grid;
+    grid-template-columns: 190px 190px;
+    grid-template-rows: 190px 190px;
+    justify-content: center;
+    column-gap: 2.5rem;
+    row-gap: 100px;
+    margin-right: 2rem;
+    position:relative;
+
+}
+
+.about-card{
+    background-color: var(--bg-color-2);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.5s transform;
+
+
+}
+.about-card:nth-child(1){
+    border-radius: 40px 40px 5px 40px;
+}
+
+
+.about-card:nth-child(2){
+    margin-top: 50px;
+    border-radius: 40px 40px 40px 5px;
+}
+.about-card:nth-child(3){
+    margin-top: -50px;
+    border-radius: 40px 5px 40px 40px;
+}
+.about-card:nth-child(4){
+    border-radius: 5px 40px 40px 40px;
+}
+
+.icon {
+    width: 60px;
+}
+
+.st0{
+    fill: var(--bg-color-3);
+}
+.st1{
+    fill: #c5e3ea;
+}
+.st2{
+    fill: var(--heading-color);
+    transition: 0.3s;
+}
+
+.about-card h3{
+    color: var(--heading-color);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 1rem;
+    letter-spacing: 0.3px;
+
+}
+
+.about-card:hover{
+    transform: scale(1.1);
+
+}
+
+.about-card:hover .st2{
+    fill: var(--main-color-1);
+
+}
+
+.about-grid::before{
+    content:"";
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 15px solid var(--main-color-1);   
+    z-index: -1; 
+    opacity: 0.07;
+
+}
+
+
+
+.about .triangle{
+    position: absolute;
+    left: 85%;
+    top: 42%;
+    transform: translate(-50%, -50%);
+
+}
+
+
+/*-------------Skills Section Styling ------------------*/
+
+.skills {
+    overflow : hidden;
+}
+
+.skills-box{
+    background-color: var(--bg-color-2);
+    padding: 2rem 6rem;
+    border-radius:20px;
+    width : 100%;
+    position: relative;
+    z-index: -1;
+
+}
+
+
+
+.box-desc{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    column-gap: 2rem;
+}
+
+.skills-wrap{
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+    margin-top: 2rem;
+    justify-content: space-between;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sk-progress{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    
+}
+
+.sk-progress svg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.sk-progress svg circle{
+    fill: var(--bg-color-3);
+    stroke-width: 5px;
+    stroke: var(--main-color-1);
+    stroke-dashoffset: 427;
+    stroke-dasharray: 427;
+    stroke-linecap: round;
+}
+
+@keyframes progress{
+    to{
+        stroke-dashoffset: var(--target);
+    }
+}
+
+.counter{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: var(--heading-color);
+    font-weight: 400;
+    font-size: 0.9rem;
+
+}
+
+.counter span{
+    font-size: 2.45rem;
+}
+
+.sk-title {
+    color: var(--heading-color);
+    margin-top: 0.75rem;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.skills .dots {
+    position:absolute;
+    left:0%;
+    top:5%;
+    overflow: visible;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+
+.skills .square {
+    position:absolute;
+    left:75%;
+    top:100%;
+    overflow: visible;
+    transform: translate(-50%, -50%);
+    z-index: 0;
 }
