@@ -16,7 +16,7 @@
     --bg-color-transparent: rgba(255, 255, 255, 0.6);
     --heading-color: hsl(var(--hue-1), 61%, 24%);
     --text-color: hsl(var(--hue-1), 17%, 63%);
-    --section-padding: 57rem;
+    --section-padding: 7rem;
 }
 
 
@@ -103,14 +103,25 @@ ul {
 
 .about {
     position: relative;
-    top: 57rem;
+    
     
 }
 
 .skills{
     position: relative;
-    top: 67rem;
-    padding-bottom : 10rem;
+    top: var(--section-padding);
+   
+}
+
+.services{
+    position: relative;
+    padding-top: 20rem;
+    padding-bottom: 5rem;
+}
+.portfolio{
+    position: relative;
+    padding-top: 15rem;
+    padding-bottom: 5rem;
 }
 
 .triangle{
@@ -242,7 +253,7 @@ header.scrolled .logo {
     padding: 120px 0;
     width: 100%;
     overflow: hidden;
-    position: absolute;
+    
    
 }
 
@@ -305,6 +316,7 @@ header.scrolled .logo {
     border-bottom: 2.5px solid var(--main-color-2);
     border-radius: 0px;
     padding: 0.15rem 0;
+    min-width: revert;
 }
 
 .btn.secondary-btn::before{
@@ -320,6 +332,17 @@ header.scrolled .logo {
 
 .btn.secondary-btn:hover::before{
     width: 100%;
+}
+
+.btn.secondary-btn.sm {
+    padding: 0.07rem 0.1rem;
+    font-size: 0.78rem;
+    border-bottom-width: 2px;
+}
+
+.btn.secondary-btn.sm::before {
+    height: 2px;
+    bottom:-2px;
 }
 
 .showcase-image{
@@ -362,7 +385,7 @@ header.scrolled .logo {
 .showcase-area .square{
     position: absolute;
     left: 25%;
-    bottom: 120px;
+    top: 100%;
     transform: translate(-50%, -50%);
 
 }
@@ -484,7 +507,7 @@ header.scrolled .logo {
 /*-------------Skills Section Styling ------------------*/
 
 .skills {
-    overflow : hidden;
+    overflow : visible;
 }
 
 .skills-box{
@@ -493,7 +516,7 @@ header.scrolled .logo {
     border-radius:20px;
     width : 100%;
     position: relative;
-    z-index: -1;
+   
 
 }
 
@@ -576,19 +599,253 @@ header.scrolled .logo {
 
 .skills .dots {
     position:absolute;
-    left:0%;
-    top:5%;
+    left:0;
+    top:0;
     overflow: visible;
     transform: translate(-50%, -50%);
-    z-index: 10;
+    z-index: -1;
+    
 }
 
 
 .skills .square {
     position:absolute;
-    left:75%;
-    top:100%;
+    left:100%;
+    top:50%;
     overflow: visible;
     transform: translate(-50%, -50%);
     z-index: 0;
+}
+
+/* ---------------------------------About Section Styling ----------------------------*/
+
+.services .container{
+ display: grid;
+ grid-template-columns: 1fr 1.3fr;
+ column-gap: 6rem;
+ align-items: center;   
+}
+
+.milestones{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    text-align: center;
+    justify-items: flex-start;
+}
+
+.milestones h2{
+    color: var(--main-color-1);
+    font-size: 1.3rem;
+}
+
+.milestones h2 span{
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-right: 0.1rem;
+}
+
+.milestones h5{
+    color: var(--heading-color);
+    line-height: 0.9;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.services-grid{
+    
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+    row-gap: 4.4rem;
+}
+
+.srv-card{
+    background-color: var(--bg-color-2);
+    border-radius: 15px;
+    padding: 2.5rem 2.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    min-height: 280px;
+}
+
+.srv-card h3 {
+    color: var(--heading-color);
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+.srv-card .txt {
+    margin: 0.7rem 0;
+    font-size: 0.7rem;
+}
+
+.srv-card:nth-child(2){
+    transform: translateY(2.2rem);
+}
+
+.srv-card:nth-child(3){
+    transform: translateY(-2.2rem);
+}
+
+
+.services-grid::before{
+    content:"";
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 15px solid var(--main-color-1);   
+    z-index: -1; 
+    opacity: 0.07;
+
+}
+
+.services .triangle {
+    top: 100%;
+    left: 30%;
+    position: absolute;
+    transform: translate(-50%, -100%);
+}
+
+.services .square {
+    top: 75%;
+    left: -15px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    
+}
+
+
+/*---------------------Portfolio Section Styling -------------------------------*/
+
+.portfolio-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+}
+
+.portfolio-title{
+    padding-bottom: 1rem;
+}
+
+.filter-btn {
+    display: inline-block;
+    color: var(--heading-color);
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    margin-left: 1.3rem;
+    font-family: inherit;
+    text-transform: uppercase;
+}
+
+.filter-btn.mixitup-control-active{
+    color: var(--main-color-1);
+}
+
+.portfolio-gallery {
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    
+}
+
+.prt-card{
+    
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: var(--bg-color-2);
+    height: 265px;
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+.prt-image{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.prt-image img{
+    width: 105%; 
+    
+}
+
+.prt-desc{
+    padding: 1.1rem 1.6rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.prt-desc h3{
+    font-size: .95rem;
+    color: var(--heading-color);
+    font-weight: 600;
+    text-transform: capitalize;
+
+}
+
+.prt-overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    backdrop-filter: blur(0px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.prt-image:hover .prt-overlay{
+    pointer-events: auto;
+    background-color: var(--bg-color-transparent);
+    backdrop-filter: blur(10px);
+}
+
+.prt-icon{
+    color: var(--heading-color);
+    font-size: 1.1rem;
+    margin: 0 0.4rem;
+    background-color: var(--main-color-2);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transform: translateY(15px);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.prt-icon:hover{
+    background-color: var(--main-color-dark-2);
+}
+
+.prt-image:hover .prt-icon{
+    opacity:1;
+    transform: translateY(0px);
+    transition: 0.3s var(--i);
 }
