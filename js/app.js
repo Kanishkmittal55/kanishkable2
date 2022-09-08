@@ -7,6 +7,13 @@ const progress_bars = document.querySelectorAll(".skills svg circle");
 const ml_section = document.querySelector(".milestones");
 const ml_counters = document.querySelectorAll(".number span");
 
+const prt_section = document.querySelector(".portfolio");
+const zoom_icons = document.querySelectorAll(".zoom-icon");
+const modal_selector = document.querySelector(".modal-overlay");
+const images = document.querySelectorAll(".images img");
+const prev_btn = document.querySelector(".prev-btn");
+const next_btn = document.querySelector(".next-btn");
+
 window.addEventListener("scroll", () => {
   if (!skillsPlayed) skillsCounter();
   if (!mlPlayed) mlCounters();
@@ -102,3 +109,44 @@ let mixer = mixitup(".portfolio-gallery", {
     duration: 500,
   },
 });
+
+/* --------------------------- Modal Pop Up Animation -------------------------------*/
+
+let currentIndex = 0;
+
+zoom_icons.forEach((icn, i) =>
+  icn.addEventListener("click", () => {
+    prt_section.classList.add("open");
+    document.body.classList.add("stopScrolling");
+    currentIndex = i;
+    changeImage(currentIndex);
+  })
+);
+
+modal_selector.addEventListener("click", () => {
+  prt_section.classList.remove("open");
+  document.body.classList.remove("stopScrolling");
+});
+
+prev_btn.addEventListener("click", () => {
+  if (currentIndex === 0) {
+    currentIndex = 5;
+  } else {
+    currentIndex--;
+  }
+  changeImage(currentIndex);
+});
+
+next_btn.addEventListener("click", () => {
+  if (currentIndex === 5) {
+    currentIndex = 0;
+  } else {
+    currentIndex++;
+  }
+  changeImage(currentIndex);
+});
+
+function changeImage(index) {
+  images.forEach((img) => img.classList.remove("showImage"));
+  images[index].classList.add("showImage");
+}
