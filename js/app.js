@@ -150,3 +150,5 @@ function changeImage(index) {
   images.forEach((img) => img.classList.remove("showImage"));
   images[index].classList.add("showImage");
 }
+
+/* -------------------------------Swiper Animation ------------------------------- */

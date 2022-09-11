@@ -7,6 +7,11 @@
     <title>Kanishkable Portfolio Website</title>
     <!-- Scroll Reveal Library -->
     <script src="https://unpkg.com/scrollreveal"></script>
+    <!--Swiper Library Link-->
+    <link
+     rel="stylesheet"
+     href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+      />
     <!-- CSS Files -->
     <link
       rel="stylesheet"
@@ -852,11 +857,149 @@
         </div>
       </section>
 
+      <section class="testimonials section">
+        <div class="container">
+          <div class="section-background">
+            <img src="./assets/3.png" class="person" alt="">
+            <img src="./assets/circle2.png" class="circle" alt="">
+            <img src="./assets/square1.png" class="square" alt="">
+          </div>
+          <div class="swiper">
+            <div class="swiper-wrapper">
+
+              <div class="swiper-slide">
+                <div class="client">
+                  <img src="./assets/testi1.png" class="" alt="">
+                  <div class="client-info">
+                    <h4>Kelly Williams</h4>
+                    <h5>Executive Officer <a href="#">@ABEnergy</a></h5>
+                  </div>
+                </div>
+                <q class="text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi et praesentium obcaecati labore nam vel totam culpa possimus quia natus reiciendis illum quisquam sint deleniti suscipit, ab corporis voluptates nesciunt!
+                </q>
+              </div>
+              <div class="swiper-slide">
+                <div class="client">
+                  <img src="./assets/testi2.png" class="" alt="">
+                  <div class="client-info">
+                    <h4>Dr. Naman Jain</h4>
+                    <h5>CEO of <a href="#">@Appopener.com</a></h5>
+                  </div>
+                </div>
+                <q class="text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi et praesentium obcaecati labore nam vel totam culpa possimus quia natus reiciendis illum quisquam sint deleniti suscipit, ab corporis voluptates nesciunt!
+                </q>
+              </div>
+              <div class="swiper-slide">
+                <div class="client">
+                  <img src="./assets/testi3.png" class="" alt="">
+                  <div class="client-info">
+                    <h4>Dr. Paul Kyberd</h4>
+                    <h5>Lecturer at <a href="#">@Brunel_University</a></h5>
+                  </div>
+                </div>
+                <q class="text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi et praesentium obcaecati labore nam vel totam culpa possimus quia natus reiciendis illum quisquam sint deleniti suscipit, ab corporis voluptates nesciunt!
+                </q>
+              </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+          
+          </div>
+          <div class="testimonials-title">
+            <h3 class="sub-heading">Testimonials</h3>
+            <h1 class="heading">Hear from my Happy Clients</h1>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section">
+        <img src="./assets/triangle.png" class="shape triangle">
+        <div class="container">
+          <img src="./assets/square2.png" class="shape square">
+          <div class="contact-info">
+            <h3 class="sub-heading">Contact me</h3>
+            <h1 class="heading">Let's work together</h1> 
+            <p class="text">
+              Or my doors are always open you can talk with me anything Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis nesciunt sapiente non sint sequi recusandae similique, dolorum rem veritatis expedita.
+            </p>
+            <a href="mailto:kanishkmittal55@gmail.com" class="mail">kanishkmittal55@gmail.com <i class="uil uil-arrow-right"></i></a>
+          </div>
+          
+          <form action="index.html" class="contact-form">
+            <h3>Send me a message</h3>
+            <input type="text" class="form-input" placeholder="Your Name" required>
+            <input type="email" class="form-input" placeholder="Your Email" required>
+            <textarea placeholder="Project Details" class="form-input" required></textarea>
+            <input type="submit" value="Send" class="btn">
+          </form>
+        </div>
+      </section>
+
+      <section class="subscription section">
+        <div class="container">
+          <img src="./assets/map.png" alt="" class="map">
+          <div class="sub-box">
+            <img src="./assets/square2.png" alt="" class="shape square">
+            <div class="sub-info">
+              <h3 class="sub-heading">Newsletter</h3>
+              <h1 class="heading">Get News about my projects</h1>
+              <p class="text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam aspernatur culpa maxime soluta. Inventore ullam expedita fuga, officia atque sequi.
+              </p>
+            </div>
+            <form action="index.html">
+              <input type="Email" placeholder="Email" class="form-input" required>
+              <input type="submit" value="subscribe" class="btn">
+            </form>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div class="container">
+          <a href="#" class="logo">Kanishk<span>able.</span></a>
+          <p class="text">&copy; Copyright 2022. All rights reserved</p>
+          <ul class="social-media">
+            <li>
+              <a href="https://www.linkedin.com/in/kanishk-mittal-1a6ab6b9/" target="_blank" class="social-link">
+                <i class="uil uil-linkedin"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/Kanishkmittal55" target="_blank" class="social-link">
+                <i class="uil uil-github"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/channel/UChrBn1BJ3F5GWd3vZTfkKtA" target="_blank" class ="social-link">
+                <i class="uil uil-youtube"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
       
     </main>
     <!-- JavaScript Files -->
 
     <script src="./js/mixitup.min.js"></script>
     <script src="./js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <script>
+    const swiper = new Swiper(".swiper", {
+    loop: true,
+    speed: 500,
+    autoplay: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    
+    });
+  </script>
+
   </body>
 </html>
